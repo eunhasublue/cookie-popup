@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cookie Popup</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer type="module" src="js/animate.mjs"></script>
+    <script defer type="module" src="js/popup.mjs"></script>
+    <script type="module">
+      import Popup from "./js/popup.mjs";
+      window.addEventListener("load", () => {
+        new Popup({
+          name: "today=done",
+          popup: "#popup",
+          btnView: ".view",
+          btnDel: " .del",
+          btnClose: ".close",
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <a href="#" class="del">DELETE COOKIE</a>
+    <a href="#" class="view">VIEW COOKIE</a>
+
+    <aside id="popup">
+      <div class="content">WELCOME!</div>
+      <div class="wrap">
+        <input type="checkbox" id="ck" />
+        <label for="ck">오늘 하루 그만보기</label>
+      </div>
+      <a href="#" class="close">CLOSE</a>
+    </aside>
+  </body>
+</html>
